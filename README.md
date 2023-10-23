@@ -1,6 +1,9 @@
 # josetorronteras.github.io
 My personal GitHub page
 
+[![CodeFactor](https://www.codefactor.io/repository/github/josetorronteras/josetorronteras.github.io/badge)](https://www.codefactor.io/repository/github/josetorronteras/josetorronteras.github.io)
+
+
 ## 🥷 Usage
 
 - You can modify all the information in the files in the `data` folder (presentation, social links, projects list, colors).

@@ -15,4 +15,4 @@ jobs:
       - name: Install dependecies
         run: bun install
       - name: Astro check
-        run: npm run check
+        run: bun run check

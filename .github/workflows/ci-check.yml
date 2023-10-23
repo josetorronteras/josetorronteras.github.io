@@ -1,0 +1,19 @@
+name: CI
+
+on: pull_request
+
+jobs:
+  check-astro:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Setup bun.sh
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+      - name: Install dependecies
+        run: bun install
+      - name: Astro check
+        run: bun run check

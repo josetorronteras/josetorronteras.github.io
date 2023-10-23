@@ -1,6 +1,6 @@
 name: CI
 
-on: [pull_request]
+on: [push, pull_request]
 
 jobs:
   check-astro:
@@ -8,10 +8,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: checks
-        uses: actions/setup-node@v3
+      - name: Setup bun.sh
+        uses: oven-sh/setup-bun@v1
         with:
-          node-version: 18.14.1
-          cache: "npm"
-      - run: npm install
-      - run: npm run check
+          bun-version: latest
+      - name: Install dependecies
+        run: bun install
+      - name: Astro check
+        run: npm run check

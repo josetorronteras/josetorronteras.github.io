@@ -1,17 +1,22 @@
 ---
 import type { HTMLAttributes } from "astro/types";
+import Icon from './Icon.astro'
 
 type Props = HTMLAttributes<"a"> & {
+  icon?: string | null;
   label: string;
   isUnderline?: boolean;
 };
 
-const { label, isUnderline, ...props } = Astro.props;
+const { icon, label, isUnderline, ...props } = Astro.props;
+
+const hasIcon = icon !== null && icon !== undefined;
 ---
 
 <a
   href={props.href}
   class:list={{
+    ["list flex gap-2 items-center"]: hasIcon,
     ["hover:text-neutral-100 cursor-pointer"]: true,
     ["underline decoration-dashed underline-offset-8"]: isUnderline,
   }}
@@ -19,6 +24,7 @@ const { label, isUnderline, ...props } = Astro.props;
   rel="noreferrer"
   target="_blank"
 >
+  {hasIcon && <Icon svg={icon!} />}
   {label}
   <span class="sr-only">{label} link</span>
 </a>

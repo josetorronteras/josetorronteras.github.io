@@ -8,8 +8,7 @@ type Props = HeadTags;
 const { title, description, noindex, og } = Astro.props;
 
 const DEFAULT_TITLE_PAGE = "Jose Torronteras";
-const DEFAULT_DESCRIPTION_PAGE =
-  "Jose Torrontera's personal page ";
+const DEFAULT_DESCRIPTION_PAGE = "Jose Torrontera's personal page ";
 const DEFAULT_URL_SITE = SITE_URL;
 
 const openGraph = {
@@ -43,8 +42,9 @@ const openGraph = {
     }}
     extend={{
       link: [
-        { rel: "icon", href: "/favicon.svg" },
+        { rel: "icon", href: "/public/favicon.svg" },
         { rel: "sitemap", href: "/sitemap-index.xml" },
+        { rel: "manifest", href: "/public/manifest.json" },
       ],
       meta: [
         { name: "viewport", content: "width=device-width, initial-scale=1" },

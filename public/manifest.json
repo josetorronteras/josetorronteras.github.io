@@ -1,0 +1,64 @@
+{
+  "short_name": "Jose Torronteras",
+  "name": "Jose Torrontera's personal page",
+  "description": "Welcome to my personal website! I'm an enthusiastic iOS developer sharing my journey in app development for Apple devices and other technologies. Explore my posts for insights into the latest iOS trends and innovative projects. Thank you for visiting!",
+  "icons": [
+    {
+      "src": "assets/manifest-icon-192.maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/manifest-icon-192.maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "assets/manifest-icon-512.maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/manifest-icon-512.maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#F1ECCE",
+  "background_color": "#0a0a0a",
+  "shortcuts": [
+    {
+      "name": "Latest posts",
+      "short_name": "Posts",
+      "description": "Explore the latest posts that I have shared on my personal website. Discover a variety of topics, from news and reflections to practical tips and personal experiences.",
+      "url": "/posts",
+      "icons": [
+        {
+          "src": "assets/manifest-icon-192.maskable.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "My projects",
+      "short_name": "Projects",
+      "description": "Explore a collection of my personal and professional projects. From innovative experiments to real-world solutions, these projects reflect my passion for creativity and problem-solving.",
+      "url": "/projects",
+      "icons": [
+        {
+          "src": "assets/manifest-icon-192.maskable.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+  ]
+}

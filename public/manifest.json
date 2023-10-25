@@ -31,7 +31,9 @@
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "display_override": ["minimal-ui"],
+  "display_override": [
+    "minimal-ui"
+  ],
   "theme_color": "#F1ECCE",
   "background_color": "#0a0a0a",
   "shortcuts": [
@@ -60,6 +62,5 @@
       ]
     }
   ],
-  "screenshots": [
-  ]
+  "screenshots": []
 }

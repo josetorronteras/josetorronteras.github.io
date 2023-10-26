@@ -1,4 +1,4 @@
-import Profile from '@/assets/profile.webp'
+import Profile from "@/assets/profile.webp";
 
 type Social = {
   icon: string;

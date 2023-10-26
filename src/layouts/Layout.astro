@@ -15,12 +15,15 @@ const headTags = Astro.props;
 <html lang="en" class="">
   <SEOTags {...headTags} />
 
-  <body class="mx-auto flex min-h-screen max-w-[872px] flex-col gap-9 px-10 py-8 text-sm text-neutral-400 bg-neutral-950 md:gap-20 md:py-16">
+  <body
+    class="mx-auto flex min-h-screen max-w-[872px] flex-col gap-9 bg-neutral-950 px-10 py-8 text-sm text-neutral-400 md:gap-20 md:py-16"
+  >
     <Header />
     <slot />
     <style is:global>
       html {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
       }
     </style>
   </body>

@@ -1,39 +1,33 @@
 ---
-import removeTrailingSlash from "@/utils/removeTrailingSlash";
-import presentation from "@/data/presentation";
-import convertAsteriskToStrongTag from "@/utils/convertAsteriskToStrongTag";
+import { Image } from "astro:assets";
+import NavItem from "./shared/NavItem.astro";
 
+import navigationItems from "@/data/navigation";
+import removeTrailingSlash from "@/utils/removeTrailingSlash";
 const pathname = removeTrailingSlash(Astro.url.pathname);
 ---
 
 <header class="z-40 flex w-full flex-col gap-2 md:flex-row md:justify-between">
-
-  <p
-    class="hover:text-neutral-100"
-    set:html={convertAsteriskToStrongTag(`*print("*Hello, World!*")*`)}
+  <Image
+    src={"/public/favicon.svg"}
+    class="w-10"
+    alt="Personal logo"
+    width="20"
+    height="20"
   />
 
-  <nav role="navigation">
-    <ul role="list" class="flex flex-row gap-2">
-      <li>
-        <a
-          href="/"
-          class:list={{
-            ["hover:text-neutral-100"]: true,
-            ["text-neutral-100"]: pathname === "/",
-          }}>Home</a
-        >
-      </li>
-      <li>|</li>
-      <li>
-        <a
-          href="/posts"
-          class:list={{
-            ["hover:text-neutral-100"]: true,
-            ["text-neutral-100"]: pathname === "/posts",
-          }}>Posts</a
-        >
-      </li>
-    </ul>
-  </nav>
+  <div class="flex items-center gap-2">
+    <nav role="navigation" aria-label="Main navigation">
+      <ul role="list" class="flex flex-row gap-2">
+        {
+          navigationItems.map((item) => (
+            <>
+              <NavItem item={item} currentPath={pathname} />
+              <li>|</li>
+            </>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
 </header>

@@ -1,11 +1,10 @@
-name: CI
+name: Check Astro
 
 on: pull_request
 
 jobs:
   check-astro:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3

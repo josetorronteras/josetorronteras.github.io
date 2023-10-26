@@ -1,3 +1,5 @@
+import Profile from '@/assets/profile.webp'
+
 type Social = {
   icon: string;
   label: string;
@@ -9,13 +11,13 @@ type Presentation = {
   title: string;
   description: string;
   socials: Social[];
-  profile: string;
+  profile: ImageMetadata;
 };
 
 const presentation: Presentation = {
   mail: "@gmail.com",
   title: "Hi, I’m Jose Torronteras 👋",
-  profile: "/public/profile.webp",
+  profile: Profile,
   description:
     "I'm an experienced *iOS developer* with a passion for building beautiful, performant and user-friendly applications. I have a deep understanding of *Swift, Objective-C, SwiftUI, UIKit, Core Data*, and other technologies required for iOS app development.",
   socials: [

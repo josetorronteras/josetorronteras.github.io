@@ -1,7 +1,6 @@
 ---
 import { Image } from "astro:assets";
 import NavItem from "./shared/NavItem.astro";
-import DarkMode from "./shared/DarkMode.astro";
 
 import navigationItems from "@/data/navigation";
 import removeTrailingSlash from "@/utils/removeTrailingSlash";
@@ -30,6 +29,5 @@ const pathname = removeTrailingSlash(Astro.url.pathname);
         }
       </ul>
     </nav>
-    <DarkMode />
   </div>
 </header>

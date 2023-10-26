@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets"
+import { Image } from "astro:assets";
 import NavItem from "./shared/NavItem.astro";
 import DarkMode from "./shared/DarkMode.astro";
 
@@ -20,13 +20,16 @@ const pathname = removeTrailingSlash(Astro.url.pathname);
   <div class="flex items-center gap-2">
     <nav role="navigation" aria-label="Main navigation">
       <ul role="list" class="flex flex-row gap-2">
-        {navigationItems.map(item => (
-          <NavItem item={item} currentPath={pathname} />
-          <li>|</li>
-        ))}
+        {
+          navigationItems.map((item) => (
+            <>
+              <NavItem item={item} currentPath={pathname} />
+              <li>|</li>
+            </>
+          ))
+        }
       </ul>
     </nav>
     <DarkMode />
-</div>
-  
+  </div>
 </header>

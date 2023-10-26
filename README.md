@@ -1,8 +1,8 @@
 # josetorronteras.github.io
+
 My personal GitHub page
 
 [![CodeFactor](https://www.codefactor.io/repository/github/josetorronteras/josetorronteras.github.io/badge)](https://www.codefactor.io/repository/github/josetorronteras/josetorronteras.github.io)
-
 
 ## 🥷 Usage
 
@@ -24,6 +24,6 @@ All commands are run from the root of the project, from a terminal:
 
 ## 🙏 Thanks
 
-| Project                   | Description                                           |
-| :------------------------ | :----------------------------------------------- |
+| Project                                                                  | Description                                                                                                                              |
+| :----------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------- |
 | [pwa-asset-generator](https://github.com/elegantapp/pwa-asset-generator) | Automates PWA asset generation and image declaration. Automatically generates icon and splash screen images, favicons and mstile images. |

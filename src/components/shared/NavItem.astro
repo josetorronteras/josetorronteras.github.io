@@ -10,12 +10,13 @@ const { item, currentPath } = Astro.props;
 ---
 
 <li>
-    <a
+  <a
     href={item.path}
     class:list={{
-        ["hover:text-neutral-100 dark:text-red"]: true,
-        ["text-neutral-100"]: `${item.path}` === `${currentPath}`,
-    }}>
+      ["hover:text-neutral-100 dark:text-red"]: true,
+      ["text-neutral-100"]: `${item.path}` === `${currentPath}`,
+    }}
+  >
     {item.label}
-</a>
+  </a>
 </li>

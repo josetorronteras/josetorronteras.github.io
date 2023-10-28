@@ -16,3 +16,5 @@ jobs:
         run: bun install
       - name: Astro check
         run: bun run check
+      - name: Astro build
+        run: bun run build

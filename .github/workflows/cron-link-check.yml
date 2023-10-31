@@ -20,7 +20,7 @@ jobs:
         if: env.lychee_exit_code != 0
         uses: peter-evans/create-issue-from-file@v4
         with:
-          args: --verbose --no-progress **/*.md **/*.html
+          args: --verbose --exclude-path node_modules --no-progress **/*.md **/*.html **/*.css **/*.ts **/*.tsx
           title: Link Checker Report
           content-filepath: ./lychee/out.md
           labels: report, automated issue

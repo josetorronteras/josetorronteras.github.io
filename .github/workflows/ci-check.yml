@@ -18,3 +18,7 @@ jobs:
         run: bun run check
       - name: Astro build
         run: bun run build
+      - name: Link Checker
+        uses: lycheeverse/lychee-action@v1.8.0
+        with:
+          fail: true

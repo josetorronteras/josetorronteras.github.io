@@ -1,0 +1,26 @@
+---
+import SocialLinks from "@/components/shared/SocialLinks.astro";
+import { presentationData } from "@/data/presentation";
+import convertAsteriskToStrongTag from "@/utils/convertAsteriskToStrongTag";
+---
+
+<article class="flex flex-col gap-8 md:flex-row-reverse md:justify-between">
+  <img
+    src={presentationData.profile}
+    class="hidden w-1/4 self-center rounded-full md:flex"
+    alt="Your Profile"
+    width="200"
+    height="200"
+    style="visibility: hidden;"
+  />
+  <div class="flex flex-col gap-8">
+    <h1 class="text-dark text-3xl font-semibold dark:text-neutral-100">
+      {presentationData.title}
+    </h1>
+    <h2
+      class="w-auto max-w-[60ch] leading-6"
+      set:html={convertAsteriskToStrongTag(presentationData.description)}
+    />
+    <SocialLinks />
+  </div>
+</article>

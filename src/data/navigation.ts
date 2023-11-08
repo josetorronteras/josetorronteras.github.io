@@ -3,9 +3,13 @@ export type NavigationItem = {
   path: string;
 };
 
-const navigationItems: NavigationItem[] = [
-  { label: "Home", path: "/" },
-  { label: "Posts", path: "/posts" },
+export const navigationItems: NavigationItem[] = [
+  {
+    label: "Home",
+    path: "/"
+  },
+  {
+    label: "Posts",
+    path: "/posts"
+  },
 ];
-
-export default navigationItems;

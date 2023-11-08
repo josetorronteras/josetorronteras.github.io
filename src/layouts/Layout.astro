@@ -1,8 +1,17 @@
 ---
+import { ViewTransitions } from "astro:transitions";
 import Header from "@/components/Header.astro";
-
 import "@/styles/tailwind.css";
 import "@/styles/post.css";
+
+type Props = {
+  title: string;
+  description?: string;
+};
+
+const { title, description } = Astro.props;
+
+const DEFAULT_DESCRIPTION_PAGE = "Jose Torrontera's personal page ";
 ---
 
 <!DOCTYPE html>
@@ -13,8 +22,11 @@ import "@/styles/post.css";
       name="viewport"
       content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
-    <title>Jose Torronteras</title>
-    <meta name="description" content="Jose Torrontera's personal page" />
+    <title>{title} | Jose Torronteras</title>
+    <meta
+      name="description"
+      content={description || DEFAULT_DESCRIPTION_PAGE}
+    />
     <link
       rel="icon"
       type="image/png"
@@ -216,6 +228,24 @@ import "@/styles/post.css";
       href="/assets/apple-splash-1136-640.jpg"
       media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
     />
+    <ViewTransitions />
+    <script is:inline>
+      const setDarkMode = () => {
+        if (
+          localStorage.theme === "true" ||
+          (!("theme" in localStorage) &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+          document.documentElement.classList.add("dark");
+          localStorage.theme = "true";
+        } else {
+          document.documentElement.classList.remove("dark");
+          localStorage.theme = "false";
+        }
+      };
+      setDarkMode();
+      document.addEventListener("astro:after-swap", setDarkMode);
+    </script>
     <script
       type="text/partytown"
       src="https://www.googletagmanager.com/gtag/js?id=G-JKTL4PRDFZ"
@@ -230,7 +260,7 @@ import "@/styles/post.css";
     </script>
   </head>
   <body
-    class="mx-auto flex min-h-screen max-w-[872px] flex-col gap-9 bg-neutral-950 px-10 py-8 text-sm text-neutral-400 md:gap-20 md:py-16"
+    class="mx-auto flex min-h-screen max-w-[872px] flex-col gap-9 bg-white px-10 py-8 text-sm dark:bg-neutral-950 dark:text-neutral-400 md:gap-20 md:py-16"
   >
     <Header />
     <slot />

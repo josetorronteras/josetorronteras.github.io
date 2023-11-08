@@ -1,0 +1,36 @@
+---
+import PostCard from "@/components/index/PostCard.astro";
+import Link from "@/components/shared/Link.astro";
+import Subtitle from "@/components/shared/Subtitle.astro";
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("posts", ({ data }) => {
+  return data.isPublish !== false;
+});
+---
+
+{
+  posts.length > 0 && (
+    <article class="flex flex-col gap-8">
+      <header class="flex w-full flex-row justify-between gap-2">
+        <Subtitle label="Latest posts" />
+        <Link
+          href="/posts"
+          label="See all posts"
+          rel="Go to posts"
+          target="_self"
+        />
+      </header>
+      <section class="flex flex-col gap-4 md:flex-row md:flex-wrap">
+        {posts.slice(0, 2).map((post) => (
+          <PostCard
+            publishedAt={post.data.publishedAt}
+            title={post.data.title}
+            description={post.data.description}
+            slug={post.slug}
+          />
+        ))}
+      </section>
+    </article>
+  )
+}

@@ -1,20 +1,18 @@
 ---
+import LogoIcon from "@/components/shared/icons/LogoIcon.astro";
 import NavItem from "@/components/shared/NavItem.astro";
-import navigationItems from "@/data/navigation";
+import ToogleTheme from "@/components/shared/ToogleTheme.astro";
+import { navigationItems } from "@/data/navigation";
 import removeTrailingSlash from "@/utils/removeTrailingSlash";
+
 const pathname = removeTrailingSlash(Astro.url.pathname);
 ---
 
-<header class="z-40 flex w-full flex-row justify-between gap-2">
-  <img
-    src="/favicon.svg"
-    class="aspect-square"
-    alt="Personal logo"
-    width="40"
-    height="40"
-  />
-
-  <div class="flex items-center gap-2">
+<header class="z-40 flex w-full flex-row items-center justify-between gap-2">
+  <a href="/">
+    <LogoIcon />
+  </a>
+  <div class="flex gap-2">
     <nav role="navigation" aria-label="Main navigation">
       <ul role="list" class="flex flex-row gap-2">
         {
@@ -25,6 +23,7 @@ const pathname = removeTrailingSlash(Astro.url.pathname);
             </>
           ))
         }
+        <ToogleTheme />
       </ul>
     </nav>
   </div>

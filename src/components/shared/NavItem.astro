@@ -17,6 +17,7 @@ const { item, currentPath } = Astro.props;
         `${item.path}` != `${currentPath}`,
       ["font-semibold"]: `${item.path}` === `${currentPath}`,
     }}
+    role="listitem"
   >
     {item.label}
   </a>

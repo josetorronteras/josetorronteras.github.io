@@ -1,0 +1,35 @@
+---
+import MoonIcon from "@/components/shared/icons/MoonIcon.astro";
+import SunIcon from "@/components/shared/icons/SunIcon.astro";
+---
+
+<button
+  id="astro-color-scheme-switch"
+  class="group"
+  title="Theme switch mode"
+  aria-label="Theme switch mode"
+>
+  <MoonIcon />
+  <SunIcon />
+</button>
+
+<script>
+  const setDarkModeButton = () => {
+    const button = document.getElementById(
+      "astro-color-scheme-switch"
+    )! as HTMLButtonElement;
+    button.addEventListener("click", function () {
+      document.documentElement.classList.toggle("dark");
+
+      if (document.documentElement.classList.contains("dark")) {
+        localStorage.theme = "true";
+      } else {
+        localStorage.theme = "false";
+      }
+    });
+  };
+
+  setDarkModeButton();
+  // Runs on view transitions navigation
+  document.addEventListener("astro:after-swap", setDarkModeButton);
+</script>

@@ -5,6 +5,4 @@ export type Project = {
   isComingSoon?: boolean;
 };
 
-const projects: Project[] = [];
-
-export default projects;
+export const projects: Project[] = [];

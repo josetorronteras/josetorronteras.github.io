@@ -241,6 +241,7 @@ const DEFAULT_DESCRIPTION_PAGE = "Jose Torrontera's personal page ";
     <ViewTransitions />
     <script is:inline>
       const setDarkMode = () => {
+        const metaThemeColor = document.querySelector("meta[name=theme-color]");
         if (
           localStorage.theme === "true" ||
           (!("theme" in localStorage) &&
@@ -248,9 +249,11 @@ const DEFAULT_DESCRIPTION_PAGE = "Jose Torrontera's personal page ";
         ) {
           document.documentElement.classList.add("dark");
           localStorage.theme = "true";
+          metaThemeColor?.setAttribute("content", "#0a0a0a");
         } else {
           document.documentElement.classList.remove("dark");
           localStorage.theme = "false";
+          metaThemeColor?.setAttribute("content", "#ffffff");
         }
       };
       setDarkMode();

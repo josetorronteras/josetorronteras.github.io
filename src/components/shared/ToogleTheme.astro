@@ -7,6 +7,7 @@ import SunIcon from "@/components/shared/icons/SunIcon.astro";
   id="astro-color-scheme-switch"
   class="group"
   title="Theme switch mode"
+  role="switch"
   aria-label="Theme switch mode"
 >
   <MoonIcon />
@@ -20,11 +21,14 @@ import SunIcon from "@/components/shared/icons/SunIcon.astro";
     )! as HTMLButtonElement;
     button.addEventListener("click", function () {
       document.documentElement.classList.toggle("dark");
+      const metaThemeColor = document.querySelector("meta[name=theme-color]");
 
       if (document.documentElement.classList.contains("dark")) {
         localStorage.theme = "true";
+        metaThemeColor?.setAttribute("content", "#0a0a0a");
       } else {
         localStorage.theme = "false";
+        metaThemeColor?.setAttribute("content", "#ffffff");
       }
     });
   };

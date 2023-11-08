@@ -6,10 +6,10 @@ export type NavigationItem = {
 export const navigationItems: NavigationItem[] = [
   {
     label: "Home",
-    path: "/"
+    path: "/",
   },
   {
     label: "Posts",
-    path: "/posts"
+    path: "/posts",
   },
 ];

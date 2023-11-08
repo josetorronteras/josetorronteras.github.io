@@ -30,6 +30,6 @@
   @apply p-4;
 }
 
-.post pre>code {
+.post pre > code {
   @apply bg-transparent;
 }

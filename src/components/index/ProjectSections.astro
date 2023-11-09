@@ -10,10 +10,10 @@ import { projects } from "@/data/projects";
       <header class="flex w-full flex-row justify-between gap-2">
         <Subtitle label={`Selected projects (${projects.length})`} />
       </header>
-
       <section class="flex flex-col gap-4">
-        {projects.length !== 0 &&
-          projects.map((project) => <ProjectCard {...project} />)}
+        {projects.map((project) => (
+          <ProjectCard {...project} />
+        ))}
       </section>
     </article>
   )

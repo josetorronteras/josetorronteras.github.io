@@ -10,7 +10,7 @@ export const projects: Project[] = [
     title: "Tennis Score Counter",
     techs: ["swiftui", "watchos", "health kit"],
     link: "https://github.com/josetorronteras/",
-    isComingSoon: true
+    isComingSoon: true,
   },
   {
     title: "Music genre classification",
@@ -31,5 +31,5 @@ export const projects: Project[] = [
     title: "WeatherApp",
     techs: ["swift", "ios", "mvvm"],
     link: "https://github.com/josetorronteras/WeatherApp",
-  }
+  },
 ];

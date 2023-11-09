@@ -1,22 +1,24 @@
 ---
-import type { Project } from "@/data/projects";
+import Badge from "@/components/shared/Badge.astro";
 import ArrowIcon from "@/components/shared/icons/ArrowIcon.astro";
+import type { Project } from "@/data/projects";
 
 type Props = Project;
 
 const { title, techs, link, isComingSoon } = Astro.props;
-
-const formatTechs = (values: string[]) =>
-  values.toString().replaceAll(",", " • ");
 ---
 
 <>
   {
     isComingSoon && (
-      <div class="t group flex w-full flex-col justify-between gap-2 rounded-md border border-neutral-700 p-4 md:flex-row md:items-center">
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:gap-4">
-          <p class="font-semibold">{title}</p>
-          <p>{formatTechs(techs)}</p>
+      <div class="group flex w-full flex-col justify-between gap-2 rounded-md border border-neutral-700 p-4 md:flex-row md:items-center">
+        <div class="flex w-full justify-between gap-4 md:flex-row md:items-center">
+          <p class="font-medium">{title}</p>
+          <div>
+            {techs.map((tech) => (
+              <Badge text={tech} />
+            ))}
+          </div>
         </div>
         <p class="w-fit rounded-md bg-neutral-300 px-4 py-1 dark:bg-neutral-900">
           Soon
@@ -33,9 +35,13 @@ const formatTechs = (values: string[]) =>
         target="_blank"
         rel="noreferrer"
       >
-        <div class="flex flex-col gap-4 md:flex-row md:items-center">
-          <p class="font-semibold">{title}</p>
-          <p>{formatTechs(techs)}</p>
+        <div class="flex w-full justify-between gap-4 md:flex-row md:items-center">
+          <p class="font-medium">{title}</p>
+          <div>
+            {techs.map((tech) => (
+              <Badge text={tech} />
+            ))}
+          </div>
         </div>
         <ArrowIcon />
       </a>

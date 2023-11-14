@@ -14,6 +14,6 @@ export const navigationItems: NavigationItem[] = [
   },
   {
     label: "Career",
-    path: "/career"
-  }
+    path: "/career",
+  },
 ];

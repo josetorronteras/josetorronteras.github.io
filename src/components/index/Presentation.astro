@@ -22,7 +22,12 @@ import convertAsteriskToStrongTag from "@/utils/convertAsteriskToStrongTag";
       class="w-auto max-w-[60ch] leading-6"
       set:html={convertAsteriskToStrongTag(presentationData.description)}
     />
-    <Link href={presentationData.careerLink} label={presentationData.careerTitle} target="_self" underline />
+    <Link
+      href={presentationData.careerLink}
+      label={presentationData.careerTitle}
+      target="_self"
+      underline
+    />
     <SocialLinks />
   </div>
 </article>

@@ -1,4 +1,5 @@
 ---
+import Link from "@/components/shared/Link.astro";
 import SocialLinks from "@/components/shared/SocialLinks.astro";
 import { presentationData } from "@/data/presentation";
 import convertAsteriskToStrongTag from "@/utils/convertAsteriskToStrongTag";
@@ -21,6 +22,7 @@ import convertAsteriskToStrongTag from "@/utils/convertAsteriskToStrongTag";
       class="w-auto max-w-[60ch] leading-6"
       set:html={convertAsteriskToStrongTag(presentationData.description)}
     />
+    <Link href={presentationData.careerLink} label={presentationData.careerTitle} target="_self" underline />
     <SocialLinks />
   </div>
 </article>

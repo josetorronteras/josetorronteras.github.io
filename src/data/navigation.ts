@@ -12,4 +12,8 @@ export const navigationItems: NavigationItem[] = [
     label: "Posts",
     path: "/posts",
   },
+  {
+    label: "Career",
+    path: "/career"
+  }
 ];

@@ -5,9 +5,10 @@ import Icon from "./Icon.astro";
 type Props = HTMLAttributes<"a"> & {
   icon?: string | null;
   label: string;
+  underline?: boolean;
 };
 
-const { icon, label, ...props } = Astro.props;
+const { icon, label, underline, ...props } = Astro.props;
 
 const hasIcon = icon !== null && icon !== undefined;
 ---
@@ -16,6 +17,7 @@ const hasIcon = icon !== null && icon !== undefined;
   href={props.href}
   class:list={{
     ["list flex gap-2 items-center"]: hasIcon,
+    ["underline"]: underline,
     ["hover:text-black dark:hover:text-neutral-100 cursor-pointer"]: true,
   }}
   {...props}

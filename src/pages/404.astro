@@ -5,19 +5,17 @@ import Layout from "@/layouts/Layout.astro";
 
 <Layout title="404">
   <section>
-    <div class="mx-auto max-w-screen-xl px-4 py-8 lg:px-6 lg:py-16">
-      <div class="mx-auto max-w-screen-sm text-center">
-        <h1
-          class="mb-4 text-7xl font-extrabold text-black dark:text-white lg:text-9xl"
-        >
-          404
-        </h1>
-        <p
-          class="mb-4 text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl"
+    <div class="max-w-screen-xl py-8 sm:mx-auto sm:px-4 lg:px-6 lg:py-16">
+      <div
+        class="flex max-w-screen-sm flex-col gap-4 sm:mx-auto sm:text-center"
+      >
+        <h1 class="text-primary text-7xl font-extrabold lg:text-9xl">404</h1>
+        <h2
+          class="text-secondary text-3xl font-bold tracking-tight md:text-4xl"
         >
           Something's missing.
-        </p>
-        <p class="mb-4 text-lg font-light text-gray-500 dark:text-gray-400">
+        </h2>
+        <p class="text-secondary text-lg font-light">
           Sorry, we can't find that page. You'll find lots to explore on the
           home page.
         </p>
@@ -25,6 +23,7 @@ import Layout from "@/layouts/Layout.astro";
           href="javascript:window.history.back();"
           label="Back to Homepage"
           target="_self"
+          underline
         />
       </div>
     </div>

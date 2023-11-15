@@ -11,9 +11,7 @@ const { career } = Astro.props;
 ---
 
 <div class="flex flex-col gap-2">
-  <h3
-    class="flex flex-row items-center gap-2 text-lg font-semibold text-gray-900 dark:text-white"
-  >
+  <h3 class="text-primary flex flex-row items-center gap-2">
     {career.rol}
     {career.current && <Badge text="Current" />}
   </h3>
@@ -24,14 +22,12 @@ const { career } = Astro.props;
       ))
     }
   </div>
-  <div
-    class="text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
-  >
+  <div class="text-sm font-normal leading-none">
     <time>{career.startDate}</time> - <time>{career.endDate}</time>
   </div>
   <a
     href={career.app.link}
-    class="flex flex-wrap items-center rounded-lg bg-gray-100 hover:bg-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 md:max-w-xl md:flex-row"
+    class="card mt-3 flex flex-wrap items-center rounded-md p-2 md:max-w-xl md:flex-row"
   >
     <img
       class="h-14 rounded-t-lg object-cover p-2 md:rounded-none md:rounded-s-lg"
@@ -39,10 +35,10 @@ const { career } = Astro.props;
       alt={career.app.name + " logo"}
     />
     <div class="flex flex-col justify-between gap-0 px-2 py-2 leading-normal">
-      <h5 class="font-bold tracking-tight text-gray-900 dark:text-white">
+      <h5 class="text-secondary font-bold">
         {career.app.name}
       </h5>
-      <p class="font-normal text-gray-700 dark:text-gray-400">
+      <p class="text-secondary">
         {career.app.description}
       </p>
     </div>

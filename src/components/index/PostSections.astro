@@ -12,7 +12,7 @@ const posts = await getCollection("posts", ({ data }) => {
 {
   posts.length > 0 && (
     <article class="flex flex-col gap-8">
-      <header class="flex w-full flex-row justify-between gap-2">
+      <header class="flex w-full flex-row items-center justify-between gap-2">
         <Subtitle label="Latest posts" />
         <Link
           href="/posts"
@@ -21,7 +21,7 @@ const posts = await getCollection("posts", ({ data }) => {
           target="_self"
         />
       </header>
-      <section class="flex flex-col gap-4 md:flex-row md:flex-wrap">
+      <section class="flex flex-col gap-4 md:flex-row md:flex-wrap md:gap-6">
         {posts.slice(0, 2).map((post) => (
           <PostCard
             publishedAt={post.data.publishedAt}

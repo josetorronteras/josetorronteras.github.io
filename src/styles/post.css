@@ -1,5 +1,5 @@
 .post p {
-  @apply leading-7;
+  @apply leading-7 text-gray-800 dark:text-gray-200;
 }
 
 .post code {
@@ -7,11 +7,11 @@
 }
 
 .post h2 {
-  @apply mt-6 text-3xl;
+  @apply mt-6 text-3xl text-black dark:text-white;
 }
 
 .post h3 {
-  @apply mt-4 text-xl;
+  @apply mt-4 text-xl text-black dark:text-white;
 }
 
 .post a {

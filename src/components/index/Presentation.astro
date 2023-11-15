@@ -15,11 +15,11 @@ import convertAsteriskToStrongTag from "@/utils/convertAsteriskToStrongTag";
     style="visibility: hidden;"
   />
   <div class="flex flex-col gap-8">
-    <h1 class="text-dark text-3xl font-semibold dark:text-neutral-100">
+    <h1 class="text-primary">
       {presentationData.title}
     </h1>
-    <h2
-      class="w-auto max-w-[60ch] leading-6"
+    <p
+      class="text-secondary w-auto max-w-[60ch] leading-6"
       set:html={convertAsteriskToStrongTag(presentationData.description)}
     />
     <Link

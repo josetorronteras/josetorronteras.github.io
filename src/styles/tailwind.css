@@ -1,3 +1,49 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-3xl font-semibold;
+  }
+  h2 {
+    @apply text-2xl font-semibold;
+  }
+  h3 {
+    @apply text-xl font-medium;
+  }
+}
+
+@layer components {
+  .body {
+    @apply bg-white dark:bg-neutral-950 dark:text-neutral-400;
+  }
+
+  .text-primary {
+    @apply text-black dark:text-white;
+  }
+
+  .text-secondary {
+    @apply text-gray-800 dark:text-gray-200;
+  }
+
+  .text-link {
+    @apply text-neutral-800 hover:text-black dark:text-neutral-200 dark:hover:text-white;
+  }
+
+  .svg {
+    @apply fill-neutral-800 hover:fill-black dark:fill-neutral-200 dark:hover:fill-white;
+  }
+
+  .text-orange {
+    @apply text-orange-800 dark:text-orange-200;
+  }
+
+  .card {
+    @apply bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-800 dark:hover:bg-neutral-700;
+  }
+
+  .badge {
+    @apply bg-neutral-300 text-neutral-800 dark:bg-neutral-600 dark:text-neutral-200;
+  }
+}

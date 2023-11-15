@@ -13,9 +13,9 @@ const { item, currentPath } = Astro.props;
   <a
     href={item.path}
     class:list={{
-      ["dark:text-neutral-600 hover:text-neutral-950 dark:hover:text-neutral-100 hover:underline"]:
-        `${item.path}` != `${currentPath}`,
-      ["font-semibold"]: `${item.path}` === `${currentPath}`,
+      ["text-link hover:underline"]: `${item.path}` != `${currentPath}`,
+      ["text-black dark:text-white font-semibold"]:
+        `${item.path}` === `${currentPath}`,
     }}
   >
     {item.label}

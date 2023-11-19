@@ -1,6 +1,5 @@
 ---
 import ProjectCard from "@/components/index/ProjectCard.astro";
-import Subtitle from "@/components/shared/Subtitle.astro";
 import { projects } from "@/data/projects";
 ---
 
@@ -8,7 +7,7 @@ import { projects } from "@/data/projects";
   projects.length > 0 && (
     <article class="flex flex-col gap-8">
       <header class="flex w-full flex-row justify-between gap-2">
-        <Subtitle label={`Selected projects (${projects.length})`} />
+        <h2 class="heading text-primary">{`Selected projects (${projects.length})`}</h2>
       </header>
       <section class="flex flex-col gap-4">
         {projects.map((project) => (

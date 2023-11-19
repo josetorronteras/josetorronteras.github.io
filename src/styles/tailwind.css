@@ -2,18 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  h1 {
-    @apply text-3xl font-semibold;
-  }
-  h2 {
-    @apply text-2xl font-semibold;
-  }
-  h3 {
-    @apply text-xl font-medium;
-  }
-}
-
 @layer components {
   .body {
     @apply bg-white dark:bg-neutral-950 dark:text-neutral-400;
@@ -45,5 +33,17 @@
 
   .badge {
     @apply bg-neutral-300 text-neutral-800 dark:bg-neutral-600 dark:text-neutral-200;
+  }
+
+  .title {
+    @apply text-3xl font-bold;
+  }
+
+  .subtitle {
+    @apply text-2xl font-semibold;
+  }
+
+  .heading {
+    @apply text-xl font-medium;
   }
 }

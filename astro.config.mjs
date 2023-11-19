@@ -22,4 +22,5 @@ export default defineConfig({
       wrap: false,
     },
   },
+  compressHTML: true,
 });

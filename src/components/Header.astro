@@ -13,7 +13,7 @@ const pathname = removeTrailingSlash(Astro.url.pathname);
     <LogoIcon />
   </a>
   <div class="flex gap-2">
-    <nav>
+    <nav class="flex flex-row gap-2">
       <ul class="flex flex-row gap-2">
         {
           navigationItems.map((item) => (
@@ -23,8 +23,8 @@ const pathname = removeTrailingSlash(Astro.url.pathname);
             </>
           ))
         }
-        <ToogleTheme />
       </ul>
+      <ToogleTheme />
     </nav>
   </div>
 </header>

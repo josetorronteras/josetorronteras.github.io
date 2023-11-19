@@ -1,5 +1,4 @@
 ---
-import Title from "@/components/shared/Title.astro";
 import ArrowIcon from "@/components/shared/icons/ArrowIcon.astro";
 import Layout from "@/layouts/Layout.astro";
 import formatDate from "@/utils/formatDate";
@@ -12,7 +11,7 @@ const posts = (await getCollection("posts")).sort(function (first, second) {
 
 <Layout title="Posts">
   <main class="flex flex-col gap-10">
-    <Title label="Posts" />
+    <h1 class="title text-primary">Posts</h1>
     <article class="flex flex-col gap-4">
       {
         posts.map((post) => (
@@ -21,7 +20,7 @@ const posts = (await getCollection("posts")).sort(function (first, second) {
             href={`/posts/${post.slug}`}
           >
             <div class="flex w-full items-center justify-between">
-              <h3 class="text-primary">{post.data.title}</h3>
+              <h2 class="heading text-primary">{post.data.title}</h2>
               <div class="flex flex-row items-center gap-4">
                 <p>{formatDate(post.data.publishedAt)}</p>
                 <ArrowIcon />

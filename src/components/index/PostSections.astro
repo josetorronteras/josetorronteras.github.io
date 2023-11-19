@@ -1,7 +1,6 @@
 ---
 import PostCard from "@/components/index/PostCard.astro";
 import Link from "@/components/shared/Link.astro";
-import Subtitle from "@/components/shared/Subtitle.astro";
 import { getCollection } from "astro:content";
 
 const posts = await getCollection("posts", ({ data }) => {
@@ -13,7 +12,7 @@ const posts = await getCollection("posts", ({ data }) => {
   posts.length > 0 && (
     <article class="flex flex-col gap-8">
       <header class="flex w-full flex-row items-center justify-between gap-2">
-        <Subtitle label="Latest posts" />
+        <h2 class="heading text-primary">Latest posts</h2>
         <Link
           href="/posts"
           label="See all posts"

@@ -4,18 +4,19 @@ on:
   repository_dispatch:
   workflow_dispatch:
   schedule:
-    - cron: "00 18 * * 1"
+    # https://crontab.guru/#00_07_*_*_1
+    # "At 07:00 on Monday"
+    - cron: "00 07 * * 1"
 
 jobs:
   link-checker:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
+      - name: Checkout repository
+        uses: actions/checkout@v4
       - name: Link Checker
         id: lychee
         uses: lycheeverse/lychee-action@v1.8.0
-
       - name: Create Issue From File
         if: env.lychee_exit_code != 0
         uses: peter-evans/create-issue-from-file@v4

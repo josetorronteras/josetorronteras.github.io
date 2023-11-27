@@ -11,6 +11,8 @@ on:
 jobs:
   update-packages:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -21,12 +23,12 @@ jobs:
       - name:
         run: bun x npm-check-updates -u
       - name: Commit changes
-        run: |
-          git config user.name 'Jose Torronteras'
-          git config user.email 'josetorronteras@users.noreply.github.com'
-          git add -A
-          git commit -m "🤖 Autoupdate packages"
+        id: auto-commit-action
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 🤖 Autoupdate packages
       - name: Create Pull Request
+        if: steps.auto-commit-action.outputs.changes_detected == 'true'
         uses: peter-evans/create-pull-request@v5
         with:
           title: "🤖 Autoupdate packages"

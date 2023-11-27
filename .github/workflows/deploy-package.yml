@@ -1,4 +1,4 @@
-name: Deploy to docker hub and to ghcr
+name: Deploy to Docker Hub and to GHCR
 
 on:
   workflow_dispatch:

@@ -17,7 +17,8 @@ jobs:
       - name: Link Checker
         id: lychee
         uses: lycheeverse/lychee-action@v1.8.0
-        args: --verbose --exclude-path node_modules --no-progress **/*.md **/*.html **/*.css **/*.ts **/*.tsx
+        with:
+          args: --verbose --exclude-path node_modules --no-progress **/*.md **/*.html **/*.css **/*.ts **/*.tsx
       - name: Create Issue From File
         if: env.lychee_exit_code != 0
         uses: peter-evans/create-issue-from-file@v4

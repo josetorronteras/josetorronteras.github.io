@@ -25,6 +25,7 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           title: 🤖 Autoupdate packages
           commit-message: Autoupdate packages
           body: |

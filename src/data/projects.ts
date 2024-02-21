@@ -9,7 +9,13 @@ export type Project = {
 export const projects: Project[] = [
   {
     title: "Crypto live activity",
-    techs: ["swiftui", "live-activities", "crypto", "appgroup", "dynamic-island"],
+    techs: [
+      "swiftui",
+      "live-activities",
+      "crypto",
+      "appgroup",
+      "dynamic-island",
+    ],
     link: "",
     description: "SwiftUI app to track live crypto activities.",
     isComingSoon: true,
@@ -18,7 +24,8 @@ export const projects: Project[] = [
     title: "Tennis score counter",
     techs: ["swiftui", "watchos", "health-kit"],
     link: "",
-    description: "TCA SwiftUI app to count tennis scores and track health data.",
+    description:
+      "TCA SwiftUI app to count tennis scores and track health data.",
     isComingSoon: true,
   },
   {
@@ -48,7 +55,8 @@ export const projects: Project[] = [
   {
     title: "Weather app",
     techs: ["swift", "ios", "mvvm"],
-    description: "Simple weather app to check the current weather and forecast.",
+    description:
+      "Simple weather app to check the current weather and forecast.",
     link: "https://github.com/josetorronteras/WeatherApp",
   },
 ];

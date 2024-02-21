@@ -9,43 +9,30 @@ const { title, techs, link, description, isComingSoon } = Astro.props;
 ---
 
 <>
-  {
-    isComingSoon && (
-      <div class="card flex w-full flex-col justify-between gap-2 rounded-md p-4 md:flex-row md:items-center">
-        <p class="text-secondary font-medium">{title}</p>
-        <div class="flex items-center gap-3">
-          <div class="grow">
-            {techs.map((tech) => (
-              <Badge text={tech} />
-            ))}
-          </div>
-          <p class="badge w-fit rounded-md px-4 py-1">Soon</p>
-        </div>
+  <a
+    class:list={{
+      ["card flex flex-col w-full gap-2 justify-between rounded-md p-4 md:flex-row md:items-center"]: true,
+      ["cursor-pointer"]: !isComingSoon,
+    }}
+    href={!isComingSoon ? link : undefined}
+    target="_blank"
+    rel="noreferrer"
+  >
+    <div class="flex flex-col justify-between gap-2">
+      <p class="text-secondary font-medium">{title}</p>
+      <p class="text-secondary font-light">{description}</p>
+    </div>
+    <div class="flex items-center gap-3">
+      <div class="truncate grow">
+        {techs.map((tech) => <Badge text={tech} />)}
       </div>
-    )
-  }
-
-  {
-    !isComingSoon && (
-      <a
-        class="card flex flex-row w-full cursor-pointer rounded-md p-4 md:flex-row md:items-center"
-        href={link}
-        target="_blank"
-        rel="noreferrer"
-      >
-      <div class="flex flex-col justify-between gap-2 ">
-        <p class="text-secondary font-medium">{title}</p>
-          <div class="flex items-center gap-3">
-            <div class="grow">
-              {techs.map((tech) => (
-                <Badge text={tech} />
-              ))}
-            </div>
-            <ArrowIcon />
-          </div>
-        </div>
-        <p class="text-secondary font-light">{description}</p>
-      </a>
-    )
-  }
+      {
+        !isComingSoon ? (
+          <ArrowIcon />
+        ) : (
+          <p class="badge w-fit rounded-md px-4 py-1">Soon</p>
+        )
+      }
+    </div>
+  </a>
 </>

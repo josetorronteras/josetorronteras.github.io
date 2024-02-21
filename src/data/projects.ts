@@ -8,18 +8,24 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: "Tennis Score Counter",
+    title: "Crypto live activity",
+    techs: ["swiftui", "live-activities", "crypto", "appgroup", "dynamic-island"],
+    link: "",
+    description: "SwiftUI app to track live crypto activities.",
+    isComingSoon: true,
+  },
+  {
+    title: "Tennis score counter",
     techs: ["swiftui", "watchos", "health-kit"],
-    link: "https://github.com/josetorronteras/",
+    link: "",
     description: "TCA SwiftUI app to count tennis scores and track health data.",
     isComingSoon: true,
   },
   {
-    title: "EmailValidationMacro",
+    title: "Email validation macro",
     techs: ["swift-macro", "swift", "spm"],
-    link: "https://github.com/josetorronteras/",
+    link: "https://github.com/josetorronteras/EmailValidationMacro",
     description: "Swift macro framework for validating email addresses.",
-    isComingSoon: true,
   },
   {
     title: "Music genre classification",
@@ -40,7 +46,7 @@ export const projects: Project[] = [
     link: "https://github.com/josetorronteras/Monkey-Species-Classification",
   },
   {
-    title: "WeatherApp",
+    title: "Weather app",
     techs: ["swift", "ios", "mvvm"],
     description: "Simple weather app to check the current weather and forecast.",
     link: "https://github.com/josetorronteras/WeatherApp",

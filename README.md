@@ -6,7 +6,8 @@ My personal GitHub page
 
 ## 🥷 Usage
 
-- You can modify all the information in the files in the `data` folder (presentation, social links, projects list, colors).
+- You can modify all the information in the files in the `data` folder
+  (presentation, social links, projects list, colors).
 - You can write articles in `markdown` format in the `content/posts` folder.
 
 ## 🧞 Commands
@@ -21,6 +22,31 @@ All commands are run from the root of the project, from a terminal:
 | `bun run preview`         | Preview your build locally, before deploying     |
 | `bun run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `bun run astro -- --help` | Get help using the Astro CLI                     |
+
+## Dockerfile
+
+You can use the `Dockerfile` to build and run the project in a container.
+
+```bash
+docker build -t josetorronteras.github.io .
+docker run -p 8080:8080 josetorronteras.github.io
+```
+
+or pull the image from
+[Docker Hub](https://hub.docker.com/r/josetorronteras/josetorronteras.github.io)
+
+```bash
+docker pull josetorronteras/josetorronteras.github.io:latest
+docker run -p 8080:8080 josetorronteras.github.io:latest
+```
+
+or from
+[GitHub Container Registry](https://github.com/josetorronteras/josetorronteras.github.io/pkgs/container/josetorronteras.github.io)
+
+```bash
+docker pull ghcr.io/josetorronteras/josetorronteras.github.io:latest
+docker run -p 8080:8080 josetorronteras.github.io:latest
+```
 
 ## 🙏 Thanks
 

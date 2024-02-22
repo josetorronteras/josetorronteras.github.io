@@ -3,8 +3,8 @@ WORKDIR /usr/src/app
 
 FROM base AS install
 RUN mkdir -p /temp/prod
-COPY package.json bun.lockb /temp/prod/
-RUN cd /temp/prod && bun install --production
+COPY package.json /temp/prod/
+RUN cd /temp/prod && bun install && bun install --frozen-lockfile --production
 
 FROM install AS build
 COPY --from=install /temp/prod/node_modules node_modules

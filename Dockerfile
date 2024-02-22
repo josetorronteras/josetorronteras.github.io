@@ -1,5 +1,3 @@
-LABEL org.opencontainers.image.description "Jose Torronteras personal website"
-LABEL org.opencontainers.image.source https://github.com/josetorronteras/josetorronteras.github.io
 FROM oven/bun:1 as base
 WORKDIR /usr/src/app
 
@@ -14,6 +12,8 @@ COPY . .
 RUN bun run build
 
 FROM nginx:alpine AS runtime
+LABEL org.opencontainers.image.description "Jose Torronteras personal website"
+LABEL org.opencontainers.image.source https://github.com/josetorronteras/josetorronteras.github.io
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY --from=build /usr/src/app/dist /usr/share/nginx/html
 

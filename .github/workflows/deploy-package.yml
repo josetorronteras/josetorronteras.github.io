@@ -45,6 +45,8 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/${{ github.repository }}:latest
-            ghcr.io/${{ github.repository }}:${{ steps.meta.outputs.tags }}
+            josetorronteras/josetorronteras.github.io:latest
+            josetorronteras/josetorronteras.github.io:${{ steps.meta.outputs.labels }}
+            ghcr.io/josetorronteras/josetorronteras.github.io:latest
+            ghcr.io/josetorronteras/josetorronteras.github.io:${{ steps.meta.outputs.labels }}
           labels: ${{ steps.meta.outputs.labels }}

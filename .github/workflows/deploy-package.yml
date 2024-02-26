@@ -4,12 +4,12 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - 'master'
+      - "master"
     tags:
-      - 'v*'
+      - "v*"
   pull_request:
     branches:
-      - 'master'
+      - "master"
 
 jobs:
   push_to_registry:

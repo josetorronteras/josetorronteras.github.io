@@ -46,7 +46,7 @@ jobs:
           push: true
           tags: |
             josetorronteras/josetorronteras.github.io:latest
-            josetorronteras/josetorronteras.github.io:${{ steps.meta.outputs.labels }}
+            josetorronteras/josetorronteras.github.io:${{ steps.meta.outputs.tags }}
             ghcr.io/josetorronteras/josetorronteras.github.io:latest
-            ghcr.io/josetorronteras/josetorronteras.github.io:${{ steps.meta.outputs.labels }}
+            ghcr.io/josetorronteras/josetorronteras.github.io:${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}

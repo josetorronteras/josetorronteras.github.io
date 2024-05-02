@@ -19,7 +19,7 @@ jobs:
       - name: Astro build
         run: bun run build
       - name: Link Checker
-        uses: lycheeverse/lychee-action@v1.9.3
+        uses: lycheeverse/lychee-action@v1.10.0
         with:
           args: --verbose --exclude-path node_modules --no-progress **/*.md **/*.html **/*.css **/*.ts **/*.tsx
           fail: true
